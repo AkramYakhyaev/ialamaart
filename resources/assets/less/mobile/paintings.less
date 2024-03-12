@@ -1,0 +1,480 @@
+.paintings {
+
+    .flex(column, nowrap, flex-start, flex-start);
+    width: 100%;
+    margin: 16px 0 48px 0;
+
+    .filters-mobile-bar {
+
+        .flex(row, nowrap, flex-end, center);
+        width: ~"calc(100% - 4px)";
+        border-radius: 4px;
+        margin: 0 0 16px 0;
+        border: 2px solid #eee;
+        background-color: #fafafa;
+
+        .filters-mobile-bar__text {
+
+            .font('Fira Sans', 16px, 500, #666);
+            margin: 0 -8px 0 0;
+
+        }
+
+        .filters-mobile-bar__icon-block {
+
+            .flex(row, nowrap, center, center);
+            width: 52px;
+            height: 52px;
+
+            .filters-mobile-bar__icon {
+
+                width: 16px;
+                height: 16px;
+                margin: 1px 0 0 0;
+                display: block;
+                background-image: url("/storage/filter-down.png");
+                background-size: cover;
+                transition: .1s transform linear;
+
+                &--opened {
+                    transform: rotate(180deg);
+                }
+
+            }
+
+        }
+
+    }
+
+    .filters {
+
+        display: none;
+
+        &--mobile-opened {
+            display: block;
+            margin: 0 0 16px 0;
+        }
+
+        width: ~"calc(100% - 36px)";
+        margin: 0 0 0 24px;
+        padding: 20px 16px 16px 16px;
+        border: 2px solid #eee;
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+        background-color: #fff;
+        transition: .1s all linear;
+
+        .filters__row {
+
+            .flex(column, nowrap, flex-start, flex-start);
+            margin: 0 0 16px 0;
+
+            .filters__filter-label {
+                .font('Fira Sans', 14px, 400, #888);
+                margin: 0 0 8px 4px;
+            }
+
+            .filters__select {
+
+                .font('Fira Sans', 15px, 400, #000);
+                width: 100%;
+                padding: 12px 8px;
+                border: 2px solid #eee;
+                border-radius: 4px;
+                outline: none;
+                background-color: #fff;
+
+                option {
+
+                }
+
+            }
+
+            .filters__size {
+
+                .flex(row, nowrap, flex-start, flex-start);
+
+                .filters__size-item {
+
+                    .flex(row, nowrap, center, center);
+                    width: 40px;
+                    height: 40px;
+                    margin: 0 8px 0 0;
+                    background-color: #eee;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: .1s background-color linear;
+
+                    &:hover {
+                        background-color: #ddd;
+                    }
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    .filters__size-block {
+
+                        .flex(row, nowrap, center, center);
+                        background-color: #bbb;
+                        border-radius: 2px;
+                        transition: .1s background-color linear;
+
+                        .filters__size-label {
+
+                            .font('Fira Sans', 11px, 500, #fff);
+                            text-transform: uppercase;
+                            display: block;
+
+                        }
+
+                        &--s {
+
+                            width: 16px;
+                            height: 16px;
+
+                        }
+
+                        &--m {
+
+                            width: 20px;
+                            height: 20px;
+
+                        }
+
+                        &--l {
+
+                            width: 24px;
+                            height: 24px;
+
+                        }
+
+                        &--xl {
+
+                            width: 32px;
+                            height: 32px;
+
+                        }
+                        
+                    }
+
+                    &--active > .filters__size-block {
+                        background-color: #333;
+                    }
+
+                }
+
+            }
+
+            .filters__orientations {
+
+                .flex(row, nowrap, flex-start, flex-start);
+
+                .filters__orientation-item {
+
+                    .flex(row, nowrap, center, center);
+                    width: 40px;
+                    height: 40px;
+                    margin: 0 8px 0 0;
+                    background-color: #eee;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: .1s background-color linear;
+
+                    &:hover {
+                        background-color: #ddd;
+                    }
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    .filters__orientation-block {
+
+                        display: block;
+                        background-color: #bbb;
+                        border-radius: 2px;
+                        transition: .1s background-color linear;
+
+                        &--square {
+
+                            width: 18px;
+                            height: 18px;
+
+                        }
+
+                        &--portrait {
+
+                            width: 16px;
+                            height: 24px;
+
+                        }
+
+                        &--landscape {
+
+                            width: 24px;
+                            height: 16px;
+
+                        }
+
+                        &--elliptic {
+
+                            width: 18px;
+                            height: 24px;
+                            border-radius: 50%;
+
+                        }
+
+                    }
+
+                    &--active > .filters__orientation-block {
+                        background-color: #333;
+                    }
+
+                }
+
+            }
+
+        }
+
+        .filters__search-button {
+
+            .font('Fira Sans', 18px, 500, #fff);
+            width: ~"calc(100% - 32px)";
+            display: block;
+            padding: 16px;
+            text-align: center;
+            border-radius: 4px;
+            background-color: @red;
+            transition: .1s background-color linear;
+
+            &:hover {
+                background-color: lighten(@red, 10%);
+            }
+
+        }
+
+    }
+
+    .paintings__list {
+
+        .flex(row, wrap, flex-start, space-between);
+        width: 100%;
+        margin: 0 0 -24px 0;
+        order: 2;
+
+        .painting {
+
+            .flex(column, nowrap, flex-start, flex-start);
+            width: ~"calc(50% - 8px)";
+            margin: 0 16px 16px 0;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.1);
+            transition: .1s box-shadow linear;
+
+            &:nth-child(2n) {
+                margin: 0 0 16px 0;
+            }
+
+            &:hover .painting__name {
+                color: @red;
+            }
+
+            &:hover {
+                box-shadow: 0 2px 16px rgba(0,0,0,.25);
+            }
+
+            .painting__wrap-preview {
+
+                overflow: hidden;
+                width: 100%;
+                height: ~"calc(((50vw - 16px) - 8px) / 4 * 3)";
+                margin: 0 0 0 0;
+                border-radius: 4px 4px 0 0;
+                position: relative;
+                z-index: 10;
+
+                .painting__preview {
+
+                    width: 100%;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position-x: 50%;
+                    background-position-y: 50%;
+                    transition: 4s transform linear;
+
+                }
+
+                .painting__overlay {
+
+                    .flex(column, nowrap, flex-end, flex-start);
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    display: none;
+                    background-color: rgba(0,0,0,.5);
+                    transition: .25s opacity linear;
+
+                    .painting__price {
+
+                        .font('Fira Sans', 24px, 500, #fff);
+                        margin: 0 0 4px 12px;
+
+                    }
+
+                    .painting__category {
+                        
+                        .font('Fira Sans', 14px, 400, rgba(255,255,255,.9));
+                        margin: 0 0 16px 12px;
+
+                        a {
+
+                            .font('Fira Sans', 14px, 400, rgba(255,255,255,.9));
+                            border-bottom: 1px solid rgba(255,255,255,.5);
+                            transition: .1s color linear,
+                                        .1s border linear;
+
+                            &:hover {
+
+                                color: #fff;
+                                border-bottom: 1px solid rgba(255,255,255,.75);
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+            
+            .painting__name {
+
+                .font('Fira Sans', 14px, 500, #000);
+                display: block;
+                padding: 8px;
+                border-radius: 0 0 4px 4px;
+                transition: .1s color linear;
+
+            }
+            
+        }
+
+        .filter-pager {
+
+            .flex(column, nowrap, space-between, flex-start);
+            width: 100%;
+            //padding: 16px 0;
+            background-color: #fff;
+            position: relative;
+
+            .filter-pager__pages {
+
+                .flex(row, nowrap, center, center);
+                order: 2;
+                margin: 64px auto 0;
+
+                .filter-pager__link {
+                    
+                    .flex(row, nowrap, center, center);
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 14px;
+                    user-select: none;
+                    margin: 0 2px 0 0;
+                    transition: .1s background-color linear;
+
+                    span {
+
+                        .font('Fira Sans', 12px, 600, #333);
+                        transition: .1s color linear;
+
+                    }
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    &:hover {
+                        background-color: #eee;
+                    }
+
+                    &:hover span {
+                        color: #000;
+                    }
+
+                }
+
+                .filter-pager__link--current {
+                    
+                    background-color: @red;
+
+                    span {
+                        color: #fff;
+                    }
+
+                    &:hover {
+                        background-color: @red;
+                    }
+
+                    &:hover span {
+                        color: #fff;
+                    }
+
+                }
+
+                .filter-pager__more {
+                    .font('Proxima Nova', 12px, 600, #333);
+                }
+
+                .filter-pager__more--left {
+                    margin: 0 6px 0 0;
+                }
+
+                .filter-pager__more--right {
+                    margin: 0 0 0 6px;
+                }
+
+                .filter-pager__more--hidden {
+                    visibility: hidden;
+                }
+
+            }
+
+            .filter-pager__navigation {
+
+                .flex(row, nowrap, center, center);
+                .font('Fira Sans', 24px, 600, #fff);
+                position: absolute;
+                order: 1;
+                width: 48px;
+                height: 48px;
+                border-radius: 32px;
+                background-color: @red;
+                user-select: none;
+
+                &:first-child {
+                    left: 0;
+                }
+
+                &:last-child {
+                    right: 0;
+                }
+                
+                &--inactive {
+                    opacity: .1;
+                }
+
+            }
+            
+        }
+
+    }
+
+}

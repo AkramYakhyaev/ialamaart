@@ -1,0 +1,300 @@
+@import "/include/normalize";
+@import "/include/fonts";
+@import "/include/functions";
+@import "/include/variables";
+
+@media only screen and (min-width: 1120px) {
+
+    @import "/desktop/mixins";
+    @import "/desktop/other";
+    @import "/desktop/header";
+    @import "/desktop/footer";
+    @import "/desktop/home";
+    @import "/desktop/digitalArtConstructor";
+    @import "/desktop/paintings";
+    @import "/desktop/painting";
+    @import "/desktop/cart";
+    @import "/desktop/contact";
+    @import "/desktop/services";
+    @import "/desktop/about";
+    @import "/desktop/terms";
+    @import "/desktop/auth";
+
+    .wrap-content {
+
+        width: 1024px;
+        min-height: ~"calc(100vh - 132px - 97px)";
+        margin: 0 auto;
+
+    }
+
+    .indev {
+
+        .flex(column, nowrap, center, center);
+        width: 100%;
+        height: ~"calc(100vh - 132px - 97px)";
+
+        .indev__text {
+
+            .font('Fira Sans', 32px, 300, #000);
+            width: 50%;
+            line-height: 1.5;
+            text-align: center;
+            display: block;
+
+        }
+
+        .indev__description {
+
+            .font('Fira Sans', 16px, 400, #888);
+            width: 50%;
+            text-align: center;
+            line-height: 1.5;
+            margin: 8px 0 0 0;
+
+            a {
+                .font('Fira Sans', 16px, 500, #666);
+                transition: .1s color linear;
+                &:hover {
+                    color: @red;
+                }
+            }
+
+        }
+
+    }
+
+    .page-header {
+
+        .flex(column, nowrap, flex-start, center);
+        margin: 64px 0;
+
+        .page-header__title {
+
+            .font('Fira Sans', 40px, 500, #000);
+            margin: 0 0 16px 0;
+
+        }
+
+        .page-header__text {
+
+            .font('Fira Sans', 16px, 400, #333);
+            width: 720px;
+            text-align: center;
+
+        }
+
+        &--cart {
+
+            .flex(column, nowrap, flex-start, flex-start);
+
+            .page-header__title {
+
+                font-size: 28px;
+                margin: 0 0 12px 0;
+
+            }
+
+            .page-header__text {
+
+                width: 100%;
+                text-align: left;
+
+            }
+
+        }
+
+    }
+
+}
+
+@media only screen and (min-width: 864px) and (max-width: 1119px) {
+
+    @import "/tablet/mixins";
+    @import "/tablet/other";
+    @import "/tablet/header"; // done
+    @import "/tablet/footer"; // done
+    @import "/tablet/home"; // done
+    @import "/tablet/digitalArtConstructor"; // done
+    @import "/tablet/paintings"; // done
+    @import "/tablet/painting"; // done
+    @import "/tablet/cart"; // done
+    @import "/tablet/contact"; // done
+    @import "/tablet/services"; // done
+    @import "/tablet/about"; // done
+    @import "/tablet/terms";
+
+    .wrap-content {
+
+        width: 768px;
+        min-height: ~"calc(100vh - 132px - 97px)";
+        margin: 0 auto;
+
+    }
+
+    .indev {
+
+        .flex(column, nowrap, center, center);
+        width: 100%;
+        height: ~"calc(100vh - 132px - 97px)";
+
+        .indev__text {
+
+            .font('Fira Sans', 32px, 300, #000);
+            width: 50%;
+            line-height: 1.5;
+            text-align: center;
+            display: block;
+
+        }
+
+        .indev__description {
+
+            .font('Fira Sans', 16px, 400, #888);
+            width: 50%;
+            text-align: center;
+            line-height: 1.5;
+            margin: 8px 0 0 0;
+
+            a {
+                .font('Fira Sans', 16px, 500, #666);
+                transition: .1s color linear;
+                &:hover {
+                    color: @red;
+                }
+            }
+
+        }
+
+    }
+
+    .page-header {
+
+        .flex(column, nowrap, flex-start, center);
+        margin: 64px 0;
+
+        .page-header__title {
+
+            .font('Fira Sans', 40px, 500, #000);
+            margin: 0 0 16px 0;
+
+        }
+
+        .page-header__text {
+
+            .font('Fira Sans', 16px, 400, #333);
+            width: 512px;
+            text-align: center;
+
+        }
+
+        &--cart {
+
+            .flex(column, nowrap, flex-start, flex-start);
+
+            .page-header__title {
+
+                font-size: 28px;
+                margin: 0 0 12px 0;
+
+            }
+
+            .page-header__text {
+
+                width: 100%;
+                text-align: left;
+
+            }
+            
+        }
+
+    }
+
+}
+
+@media only screen and (max-width: 863px) {
+
+    @import "/mobile/mixins";
+    @import "/mobile/other";
+    @import "/mobile/header"; // done
+    @import "/mobile/footer"; // done
+    @import "/mobile/home"; // done
+    @import "/mobile/digitalArtConstructor"; // done
+    @import "/mobile/paintings"; // done
+    @import "/mobile/painting"; // done
+    @import "/mobile/cart"; // done
+    @import "/mobile/contact"; // done
+    @import "/mobile/services"; // done
+    @import "/mobile/about"; // done
+    @import "/mobile/terms";
+
+    .wrap-content {
+
+        width: ~"calc(100% - 32px)";
+        min-height: ~"calc(100vh - 132px - 97px)";
+        margin: 0;
+        padding: 0 16px;
+
+    }
+
+    .indev {
+
+        .flex(column, nowrap, center, center);
+        width: 100%;
+        height: ~"calc(100vh - 132px - 97px)";
+
+        .indev__text {
+
+            .font('Fira Sans', 24px, 300, #000);
+            width: 100%;
+            line-height: 1.5;
+            text-align: center;
+            display: block;
+
+        }
+
+        .indev__description {
+
+            .font('Fira Sans', 14px, 400, #888);
+            width: 100%;
+            text-align: center;
+            line-height: 1.5;
+            margin: 8px 0 0 0;
+
+            a {
+                .font('Fira Sans', 14px, 500, #666);
+                transition: .1s color linear;
+                &:hover {
+                    color: @red;
+                }
+            }
+
+        }
+
+    }
+
+    .page-header {
+
+        .flex(column, nowrap, flex-start, center);
+        margin: 24px 0;
+
+        .page-header__title {
+
+            .font('Fira Sans', 24px, 500, #000);
+            width: 75%;
+            margin: 0 0 12px 0;
+            text-align: center;
+
+        }
+
+        .page-header__text {
+
+            .font('Fira Sans', 14px, 400, #333);
+            width: 100%;
+            text-align: center;
+
+        }
+
+    }
+
+}

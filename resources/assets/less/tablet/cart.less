@@ -1,0 +1,462 @@
+.cart {
+
+    margin: 0 0 128px 0;
+
+    .cart__table-header {
+
+        .flex(row, nowrap, flex-start, center);
+        border-bottom: 4px solid #eee;
+
+        .cart__table-header-block {
+
+            .font('Fira Sans', 14px, 500, #888);
+            display: block;
+            padding: 0 0 8px 0;
+
+        }
+
+        .cart__table-header-block--name {
+
+            width: 40%;
+
+        }
+
+        .cart__table-header-block--type {
+
+            width: 20%;
+            text-align: center;
+
+        }
+
+        .cart__table-header-block--price {
+
+            width: 40%;
+            text-align: right;
+
+        }
+
+    }
+
+    .cart__items {
+
+        .cart__item {
+
+            .flex(row, nowrap, flex-start, flex-start);
+            width: 100%;
+            padding: 24px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+
+            &:last-child {
+                border: none;
+            }
+
+            .cart__item-block {
+                display: block;
+            }
+
+            .cart__item-block--name {
+
+                .flex(row, nowrap, flex-start, flex-start);
+                width: 40%;
+
+                a {
+
+                    .font('Fira Sans', 16px, 400, #000);
+                    padding: 0 0 2px 0;
+                    display: block;
+                    border-bottom: 1px solid rgba(0,0,0,.1);
+                    transition: .1s color linear,
+                                .1s border linear;
+
+                    &:hover {
+
+                        color: @red;
+                        border-bottom: 1px solid @redBorder;
+
+                    }
+
+                }
+
+            }
+
+            .cart__item-block--type {
+
+                .font('Fira Sans', 14px, 400, #888);
+                width: 20%;
+                text-align: center;
+
+            }
+
+            .cart__item-block--price {
+
+                .font('Fira Sans', 18px, 500, #333);
+                width: 40%;
+                text-align: right;
+
+            }
+
+            .cart__item-wrap-remove {
+
+                .flex(row, nowrap, center, center);
+                opacity: 1;
+                position: absolute;
+                top: 0;
+                height: 70px;
+                right: -64px;
+                padding: 0 16px;
+                transition: .1s opacity linear;
+
+                .cart__item-remove {
+
+                    .flex(row, nowrap, center, center);
+                    width: 32px;
+                    height: 32px;
+                    background-color: @red;
+                    border-radius: 16px;
+                    cursor: pointer;
+
+                    i {
+
+                        font-size: 18px;
+                        color: #fff;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .cart__summary {
+
+        .flex(row, nowrap, center, center);
+        width: 100%;
+        border-top: 4px solid @red;
+
+        .cart__summary-price {
+
+            .font('Fira Sans', 32px, 500, @red);
+            margin: 24px 0 0 0;
+
+        }
+
+    }
+
+}
+
+.payment-form {
+
+    .flex(column, nowrap, flex-start, flex-start);
+    width: 512px;
+    margin: 24px auto 0 auto;
+
+    .payment-form__row {
+
+        .flex(row, nowrap, flex-start, flex-start);
+        width: 100%;
+
+        .payment-form__column {
+
+            .flex(column, nowrap, flex-start, flex-start);
+            width: 100%;
+
+            &--half {
+
+                width: ~"calc(50% - 4px)";
+                margin: 0 8px 0 0;
+                
+                &:last-child {
+                    margin: 0;
+                }
+                
+            }
+
+            .payment-form__input {
+
+                .font('Fira Sans', 16px, 400, #000);
+                width: ~"calc(100% - 36px)";
+                margin: 0 8px 8px 0;
+                padding: 16px;
+                border: 2px solid #eee;
+                border-radius: 4px;
+                background-color: #fff;
+                transition: .1s border linear;
+
+                &:focus {
+                    border: 2px solid @red;
+                }
+
+                &:last-child,
+                &:only-child {
+                    margin: 0 0 8px 0;
+                }
+
+            }
+
+        }
+
+    }
+
+    .payment-form__methods {
+
+        .flex(column, nowrap, flex-start, flex-start);
+        width: ~"calc(100% - 4px)";
+        margin: 0 0 8px 0;
+        border: 2px solid #eee;
+        border-radius: 4px;
+
+        .payment-form__method {
+
+            .flex(row, nowrap, flex-start, center);
+            width: ~"calc(100% - 48px)";
+            padding: 16px 24px;
+            cursor: pointer;
+            border-bottom: 2px solid #f5f5f5;
+            transition: .1s color linear,
+                        .1s background-color linear,
+                        .1s border linear;
+
+            &:last-child {
+                border: none;
+            }
+
+            &:hover .payment-form__method-radio {
+
+                background-color: #ddd;
+                box-shadow: 0 0 0 2px #ddd;
+
+            }
+
+            .payment-form__method-radio {
+
+                display: block;
+                width: 12px;
+                height: 12px;
+                margin: 0 16px 0 0;
+                border: 3px solid #fff;
+                border-radius: 12px;
+                box-shadow: 0 0 0 2px #eee;
+                background-color: #fff;
+                transition: .1s background-color linear,
+                            .1s box-shadow linear;
+
+            }
+
+            .payment-form__method-icon {
+
+                width: 32px;
+                height: 32px;
+                margin: 0 12px 0 0;
+                display: block;
+                background-repeat: no-repeat;
+                background-size: contain;
+                opacity: .5;
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+                transition: .1s opacity linear,
+                            .1s filter linear;
+
+                &--paypal {
+
+                    background: url('/storage/paypal-logo.png');
+                    background-size: contain;
+
+                }
+
+                &--stripe {
+
+                    background: url('/storage/cards-icon.png');
+                    background-size: contain;
+
+                }
+
+            }
+
+            .payment-form__method-text {
+
+                .font('Fira Sans', 16px, 500, #000);
+                opacity: .5;
+
+            }
+
+        }
+
+        .payment-form__method--active {
+
+            cursor: default;
+            
+            &:hover .payment-form__method-radio {
+
+                background-color: @red;
+                box-shadow: 0 0 0 2px @red;
+
+            }
+            
+            .payment-form__method-radio {
+
+                display: block;
+                width: 12px;
+                height: 12px;
+                margin: 0 16px 0 0;
+                border: 3px solid #fcfcfc;
+                border-radius: 16px;
+                box-shadow: 0 0 0 2px @red;
+                background-color: @red;
+                transition: .1s background-color linear,
+                            .1s box-shadow linear;
+
+            }
+
+            .payment-form__method-icon {
+
+                opacity: 1;
+                -webkit-filter: grayscale(0%);
+                filter: grayscale(0%);
+
+            }
+
+            .payment-form__method-text {
+
+                color: #000;
+                opacity: 1;
+
+            }
+
+        }
+
+    }
+
+    .payment-form__submit {
+
+        .font('Fira Sans', 18px, 500, #fff);
+        width: 100%;
+        padding: 16px;
+        border-radius: 4px;
+        background-color: @red;
+        transition: .1s background-color linear;
+
+        &:hover {
+            background-color: lighten(@red, 10%);
+        }
+
+        &:disabled {
+            background-color: #eee;
+        }
+
+    }
+
+    .payment-form__error {
+
+        width: 100%;
+        margin: 8px 0 0 0;
+        
+        .payment-error {
+
+            .font('Fira Sans', 14px, 400, @red);
+            width: 100%;
+            display: block;
+            text-align: center;
+            
+        }
+
+    }
+
+}
+
+.wrap-stripe-form {
+
+    width: 100%;
+
+    .stripe-form {
+
+        width: 100%;
+
+        .group {
+
+            width: 100%;
+            margin: 0 0 8px 0;
+
+            label {
+
+                .flex(row, nowrap, flex-start, flex-start);
+                width: 100%;
+                height: 55px;
+                display: block;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid #F0F5FA;
+                }
+
+                .StripeElement--focus {
+                    border: 2px solid @red !important;
+                }
+
+                .field {
+
+                    .font('Fira Sans', 16px, 400, #000);
+                    width: ~"calc(100% - 36px)";
+                    padding: 16px;
+                    border-radius: 4px;
+                    background-color: #fff;
+                    border: 2px solid #eee;
+                    transition: .1s border linear;
+
+                    &:focus {
+                        border: 2px solid @red;
+                    }
+
+                }
+
+                .StripeElement {
+                    width: ~"calc(100% - 20px)";
+                    padding: 5.5px 0 5.5px 16px;
+                }
+                
+            }
+
+        }
+
+        .field::-webkit-input-placeholder { color: #aaa; }
+        .field::-moz-placeholder { color: #aaa; }
+        .field:-ms-input-placeholder { color: #aaa; }
+        .stripe-submit-button {
+            display: none;
+        }
+
+        .outcome {
+
+            margin: 0 0 8px 8px !important;
+
+            .error {
+                .font('Fira Sans', 14px, 400, @red);
+            }
+
+        }
+
+        .success, .error {
+            display: none;
+        }
+
+        .success.visible, .error.visible {
+            display: inline;
+        }
+
+        .error {
+            color: @red;
+        }
+
+        .success {
+            color: #666EE8;
+        }
+
+        .success .token {
+            font-size: 13px;
+        }
+
+    }
+
+}

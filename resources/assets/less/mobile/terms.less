@@ -1,0 +1,47 @@
+.terms {
+
+    .flex(column, nowrap, flex-start, flex-start);
+    margin: 16px 0 48px 0;
+
+    .terms__header {
+
+        .font('Fira Sans', 24px, 500, #000);
+        margin: 16px 0 16px 0;
+        padding: 0 0 16px 0;
+        border-bottom: 4px solid #eee;
+        text-transform: uppercase;
+
+    }
+
+    .terms__text {
+
+        .font('Fira Sans', 16px, 400, #333);
+        width: 100%;
+        margin: 0 0 16px 0;
+        line-height: 1.7;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        a {
+
+            .font('Fira Sans', 16px, 500, #000);
+            padding: 0 0 2px 0;
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            cursor: pointer;
+            transition: .1s color linear,
+                        .1s border linear;
+
+            &:hover {
+
+                color: @red;
+                border-bottom: 1px solid @redBorder;
+
+            }
+
+        }
+        
+    }
+
+}

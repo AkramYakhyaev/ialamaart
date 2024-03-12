@@ -1,0 +1,55 @@
+.block {
+
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #ddd, 0 0 0 1px #eee;
+    overflow: hidden;
+    
+}
+
+.input {
+
+    .font('Proxima Nova', 16px, 300, #000);
+    width: ~"calc(100% - 34px)";
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 14px 16px;
+    border-radius: 4px;
+    line-height: 1.6;
+    transition: 0.25s border, background-color linear;
+
+    &:focus {
+        border: 1px solid #298eea;
+    }
+
+}
+
+.label {
+
+    .font('Proxima Nova', 14px, 100, #333);
+    line-height: 1.6;
+
+    strong {
+        color: #333;
+    }
+
+}
+
+.button {
+
+    .font('Proxima Nova', 15px, 800, #fff);
+    background-color: #298eea;
+    border-radius: 4px;
+    margin: 0;
+    padding: 13px 17px;
+    transition: 0.1s background-color linear;
+
+    &:hover {
+        background-color: darken(#298eea, 5%);
+    }
+
+    &:disabled {
+        background-color: #eee;
+    }
+
+}

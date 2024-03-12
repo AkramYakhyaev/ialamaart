@@ -1,0 +1,74 @@
+.wrap-modal {
+
+    .flex(row, nowrap, center, center);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    background-color: rgba(0,0,0,.9);
+    transition: .1s opacity linear,
+                .1s visibility linear;
+
+    .modal {
+
+        .flex(column, nowrap, center, center);
+        width: 320px;
+        padding: 24px;
+        border-radius: 4px;
+        box-shadow: 0 8px 32px rgba(0,0,0,.5);
+        background-color: #fff;
+        z-index: 2000;
+        overflow: hidden;
+
+        .modal__text {
+
+            .font('Fira Sans', 16px, 400, #333);
+            text-align: center;
+            margin: 0 0 24px 0;
+
+        }
+
+        .modal__button {
+
+            .font('Fira Sans', 18px, 500, #fff);
+            padding: 16px 32px;
+            border-radius: 4px;
+            background-color: @red;
+            transition: .1s background-color linear;
+
+            &:hover {
+                background-color: lighten(@red, 10%);
+            }
+
+        }
+
+    }
+
+    &--hidden {
+
+        opacity: 0;
+        visibility: hidden;
+
+    }
+
+}
+
+.notice {
+
+    .font('Fira Sans', 14px, 400, @red);
+    width: ~"calc(100% - 32px)";
+    margin: 0 0 0 8px;
+    display: block;
+    cursor: default;
+    transition: .1s border linear,
+                .1s background-color linear;
+
+    &--margin {
+        margin: 0 0 8px 8px;
+    }
+
+}

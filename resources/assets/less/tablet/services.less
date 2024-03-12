@@ -1,0 +1,103 @@
+.services {
+
+    .flex(row, wrap, flex-start, flex-start);
+    width: 100%;
+    margin: 48px 0 24px 0;
+
+    .services__item {
+
+        width: ~"calc(100% / 3 - 18px)";
+        margin: 0 24px 24px 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,.1);
+        border-radius: 4px;
+        overflow: hidden;
+        transition: .1s box-shadow linear,
+                    .1s background-color linear;
+
+        &:nth-child(3n) {
+            margin: 0 0 24px 0;
+        }
+
+        &:hover .services__item-name {
+            color: @red;
+        }
+
+        &:hover {
+            box-shadow: 0 2px 16px rgba(0,0,0,.25);
+        }
+
+        .services__item-wrap-preview {
+
+            overflow: hidden;
+            width: 100%;
+            height: 178.5px;
+            margin: 0;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            z-index: 10;
+
+            .services__item-preview {
+
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position-x: 50%;
+                background-position-y: 50%;
+                transition: 4s transform linear;
+
+            }
+
+        }
+
+        .services__item-overlay {
+
+            .flex(column, nowrap, flex-end, flex-start);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 43%,rgba(0,0,0,0.5) 79%,rgba(0,0,0,.75) 100%);
+
+            i {
+
+                font-size: 32px;
+                color: #fff;
+                margin: 0 0 8px 0;
+                position: absolute;
+                bottom: 8px;
+                left: 12px;
+
+            }
+
+            .services__item-overlay-header {
+                .font('Fira Sans', 15px, 500, #fff);
+                margin: 0 0 22px 52px;
+            }
+
+            .services__item-overlay-header--with-description {
+                margin: 0 0 4px 52px;
+            }
+
+            .services__item-overlay-text {
+                .font('Fira Sans', 14px, 400, #fff);
+                margin: 0 0 12px 52px;
+            }
+
+        }
+
+        .services__item-name {
+
+            .font('Fira Sans', 16px, 500, #000);
+            display: block;
+            padding: 12px;
+            border-radius: 0 0 4px 4px;
+            transition: .1s color linear;
+
+        }
+
+    }
+
+}
